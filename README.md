@@ -1,58 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📄 PDF Editor - Web-Based Document Designer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## About Laravel
+A lightweight, full-stack web-based document designer built with **Laravel**, **Vanilla JavaScript (DOM Engine)**, and **Bootstrap 5.3**. Create, design, format, and export professional A4 documents and PDFs directly from your browser with real-time auto-saving and automatic multi-page breaks.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🌐 Live Demo
+🔗 **Live Application:** [http://pdf-editor.infinityfreeapp.com](http://pdf-editor.infinityfreeapp.com)  
+*(Note: Replace with your active hosting URL if different)*
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Key Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **🎨 Interactive A4 Canvas:** Real-world A4 page simulation (794px × 1123px) with configurable margins (mm), padding, orientation (Portrait/Landscape), and page background colors.
+- **📝 Rich Content Blocks:** Add custom headings, paragraphs, and high-resolution images dynamically.
+- **🔤 Advanced Typography:** Real-time font family switching (*Inter, Plus Jakarta Sans, Arial, Georgia, Times New Roman*), font sizing, colors, alignment (Left, Center, Right, Justify), and text styles (Bold, Italic, Underline).
+- **📄 Automatic Multi-Page Breaks (Reflow Engine):** Intelligent overflow detection that automatically generates additional A4 pages when content exceeds page bounds without interrupting active typing.
+- **⚡ Non-Blocking Real-Time Auto-Save:** Background AJAX serialization saves document content and settings in a flexible JSON format without page reloads.
+- **🔄 Full Undo / Redo History Stack:** Comprehensive state snapshots with full keyboard shortcut support (`Ctrl + Z` for Undo, `Ctrl + Y` / `Ctrl + Shift + Z` for Redo).
+- **🖨️ Instant PDF Export & Print:** Print-specific CSS injected on the fly for pristine 1:1 A4 PDF downloads via browser native print preview.
+- **📂 Clean Dashboard & Modal Creation:** Minimalist user workspace with document metrics, recent activity table, and quick modal-based document creation.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🛠️ Tech Stack & Architecture
 
-## Agentic Development
+- **Backend:** Laravel 11.x (MVC, Eloquent ORM, RESTful Controllers, Middleware)
+- **Database:** MySQL (Structured tables with dynamic JSON columns for content and styling)
+- **Frontend:** Blade Templates, Bootstrap 5.3, Inter Google Font
+- **Client Engine:** Pure Vanilla JavaScript (Zero bloated third-party rich-text dependencies)
+- **Storage:** Local disk driver with symbolic link for uploaded media
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
 
-```bash
-composer require laravel/boost --dev
+## 🚀 Getting Started Locally
 
-php artisan boost:install
+### Prerequisites
+- PHP >= 8.2
+- Composer
+- MySQL (XAMPP / Laragon / Native)
+
+### Installation Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/abdullahkhanathitms/web-based-pdf-editor.git
+   cd web-based-pdf-editor
+   ```
+
+2. **Install Composer dependencies:**
+   ```bash
+   composer install
+   ```
+
+3. **Configure Environment:**
+   ```bash
+   cp .env.example .env
+   ```
+   Set up your MySQL database credentials in `.env`:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=project_3rd
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+4. **Generate Application Key:**
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Run Migrations:**
+   ```bash
+   php artisan migrate
+   ```
+
+6. **Create Storage Symlink:**
+   ```bash
+   php artisan storage:link
+   ```
+
+7. **Start Development Server:**
+   ```bash
+   php artisan serve
+   ```
+   Visit: `http://127.0.0.1:8000`
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+app/
+ ├── Http/Controllers/
+ │    ├── AuthController.php       # Authentication logic (Register, Login, Logout)
+ │    ├── DashboardController.php  # User document stats & recent files
+ │    └── DocumentController.php   # Document CRUD, JSON updates, image uploads
+ └── Models/
+      ├── Document.php             # Document model with JSON casts
+      └── User.php                 # User model with document relationships
+resources/
+ └── views/
+      ├── auth/                    # Clean Spatie-inspired Login & Register views
+      ├── documents/
+      │    ├── editor.blade.php    # A4 Canvas and styling toolbar
+      │    └── index.blade.php     # Document library list
+      ├── dashboard.blade.php      # Main dashboard with modal creation
+      └── layouts/app.blade.php    # Master layout with responsive sidebar
+public/
+ ├── js/document-editor.js         # Core editor DOM engine (Reflow, Undo/Redo, Auto-save)
+ └── css/app.css                   # A4 dimensions, print queries, and UI components
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 👨‍💻 Author
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Abdullah Khan**  
+- **GitHub:** [@abdullahkhanathitms](https://github.com/abdullahkhanathitms)  
+- **Project Repository:** [web-based-pdf-editor](https://github.com/abdullahkhanathitms/web-based-pdf-editor)
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📄 License
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT License](LICENSE).
