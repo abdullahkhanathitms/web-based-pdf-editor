@@ -11,7 +11,7 @@ A lightweight, full-stack web-based document designer built with **Laravel**, **
 ---
 
 ## 🌐 Live Demo
-🔗 **Live Application:** [http://pdf-editor.infinityfreeapp.com](http://pdf-editor.infinityfreeapp.com)  
+🔗 **Live Application:** [https://pdf-editor.freedev.app/](https://pdf-editor.freedev.app/)  
 *(Note: Replace with your active hosting URL if different)*
 
 ---
